@@ -4,6 +4,7 @@ import ma.enset.bartiloussamaexamjee.dtos.ClientDTO;
 import ma.enset.bartiloussamaexamjee.entities.Client;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {

@@ -8,7 +8,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 @Mapper(componentModel = "spring")
 public abstract class RemboursementMapper {
 
@@ -26,4 +29,7 @@ public abstract class RemboursementMapper {
         if (id == null) return null;
         return creditRepository.findById(id).orElse(null);
     }
+    @Mapping(target = "credits", source = "creditId", qualifiedByName = "idToCredit")
+    public abstract List<RemboursementDTO> remboursementsToRemboursementDTOs(List<Remboursement> remboursements) ;
+
 }
