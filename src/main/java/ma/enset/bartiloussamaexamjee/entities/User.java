@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
+@Table(name = "users")
 @Data @NoArgsConstructor @AllArgsConstructor
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
